@@ -1,4 +1,10 @@
-resunate
-========
+```
+                                     __
+   ________  _______  ______  ____ _/ /____
+  / ___/ _ \/ ___/ / / / __ \/ __ `/ __/ _ \
+ / /  /  __(__  ) /_/ / / / / /_/ / /_/  __/
+/_/   \___/____/\__,_/_/ /_/\__,_/\__/\___/
 
-A Latex document class for producing enchanting resumes.
+```
+
+A Latex document class for producing memorable resumes.
