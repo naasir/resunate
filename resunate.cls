@@ -15,7 +15,7 @@
 %-----------------------------------------------------------
 % packages
 %-----------------------------------------------------------
-\RequirePackage[hmargin=0.5in,vmargin=0.7in]
+\RequirePackage[hmargin=0.5in,top=0.7in,bottom=0.6in]
                {geometry}               % set page margins
 \RequirePackage{soul}                   % space out
 \RequirePackage{scrpage2}               % control page headers and footers
@@ -107,6 +107,12 @@
 \renewcommand{\arraystretch}{2.0}
 
 %-----------------------------------------------------------
+% icons
+%-----------------------------------------------------------
+\def\rightarrow{{\icon \symbol{"F061}}}
+\def\wrench{{\icon \symbol{"F0AD}}}
+
+%-----------------------------------------------------------
 % variables
 %-----------------------------------------------------------
 \newcommand*{\name}[1]{\def\@name{#1}}
@@ -165,15 +171,6 @@
 %-----------------------------------------------------------
 % public methods
 %-----------------------------------------------------------
-
-%-----------------------------------------------------------
-% summary : a wrench icon
-% usage   : \wrench
-%-----------------------------------------------------------
-\newcommand{\wrench}{%
-  {\icon }
-}
-
 %-----------------------------------------------------------
 % summary : makes the specified text appear subtle (de-emphasizes it)
 % usage   : \subtle
@@ -198,10 +195,13 @@
 \newcommand{\workentry}[6]{%
   {\vspace{7pt}}
   {\large\textbf{#3}}\\
-  #4 -- #5 \hfill \textcolor{highlightcolor}{#1 -- #2}\\[5pt]
+  #4 -- #5 \hfill \textcolor{highlightcolor}{#1 {\footnotesize \rightarrow} #2}\\[5pt]
   {#6}
   \vspace{5pt}
-  %% \ifthenelse{\isempty{#6}}{{}}{\\#6\vspace{5pt}}
+  %% \ifthenelse{\isempty{#6}}
+             %% {}
+             %% {hello}
+  %% \ifthenelse{\isempty{#6}}{}{#6\vspace{5pt}}
 }
 
 %-----------------------------------------------------------

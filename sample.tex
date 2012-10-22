@@ -1,0 +1,143 @@
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
+
+%-----------------------------------------------------------
+% content specific helper methods
+%-----------------------------------------------------------
+
+%-----------------------------------------------------------
+% summary : helper command for specifying SLOC (source lines of code) counts
+% usage   : \sloc{number of lines of code}
+%-----------------------------------------------------------
+\newcommand{\sloc}[1]{%
+  {\footnotesize(#1 \href{http://en.wikipedia.org/wiki/Source_lines_of_code}{SLOC})}
+}
+
+%-----------------------------------------------------------
+% content
+%-----------------------------------------------------------
+\documentclass{resunate}
+\usepackage{pgfplots}
+
+\begin{document}
+\begin{resume}
+
+  \begin{abstract}
+
+    \name{Bruce Wayne}
+    \phone{\href{tel:888-123-4567}{888-123-4567}}
+    \email{bwayne@jokermail.com}
+    \website{\href{http://bigbadbruce.jk}{bigbadbruce.jk}}
+
+    \blurb{I'm a billionaire, playboy philanthropist with little to no real-world experience.
+      I enjoy fast cars, cool technology, martial arts and the company of bats. My favorite color is black. }
+
+    \maketitle
+
+    \vspace{2.1in}
+    \textit{In my spare time, I like to...}\\[5pt]
+    \begin{tikzpicture}
+      \pgfplotsset{
+        x axis style/.style={
+          xtick style=#1,
+          x axis line style=#1,
+        },
+        y axis style/.style={
+          ytick style=#1,
+          y axis line style=#1,
+        }
+      }
+      \begin{axis}[%
+          xbar,
+          bar width=5,
+          height=1.5in,
+          width=\textwidth,
+          xmin=0,
+          xtick=\empty,
+          x axis style=white,
+          xticklabels={a little, a lot},
+          xtick={0,1},
+          xticklabel style=gray,
+          yticklabels={Laugh, Cook, Drive, Fight Crime},
+          ytick={0,1,2,3},
+          y tick label style={font=\small,text width=0.5in,align=right},
+          y axis style=white,
+          axis x line*=none,
+          axis y line*=left,
+        ]
+        \addplot[draw=highlightcolor,fill=highlightcolor] coordinates {(1.0,3)(0.8,2)(0.5,1)(0.2,0)};
+      \end{axis}
+    \end{tikzpicture}
+
+  \end{abstract}
+  &
+  \begin{body}
+
+    \begin{section}{History}
+
+      \workentry{Sept. 2008}
+                {Present}
+                {Software Developer}
+                {WayneTech Systems}
+                {Gotham City, NY}
+                {Developed a range of products in the hi-tech and defense industry from the ground up, with a focus on web applications and services. Selected projects include:}
+
+       \entry{WayneTech Secret API\textregistered}
+             {C\# \sloc{25K} \wrench}
+             {A public API for WayneTech's core super project.
+               \begin{itemize}
+                 \item Implemented as a RESTful JSON web service
+                 \item Acted as the technical lead and was the top contributor
+                 \item Built key features such as ad-hoc querying support, data-paging support and a lazy-loading client library
+                 \item Built a BDD-styled integration test suite using \href{http://coffeescript.org}{Coffeescript} and \href{http://nodejs.org}{Node.js} as a means to validate and document the API
+             \end{itemize}}
+
+       \entry{WayneTech Secret Project \#1\textregistered}
+             {C\# \sloc{2.5K}, Js \sloc{2.5K} \wrench}
+             {A web application for managing communication with top secret satellites.
+               \begin{itemize}
+                 \item Implemented as a single-page, HTML5 web application using \href{http://backbonejs.org/}{Backbone.js}, \href{http://jquery.com/}{jQuery} and \href{http://lesscss.org/}{LESS}
+                 \item Acted as the technical lead and was the top contributor
+                 \item Developed the overall design of the UI
+             \end{itemize}}
+
+       \entry{WayneTech Secret Project \#2\textregistered}
+             {C\# \sloc{21K}, Js \sloc{1.5K} \wrench}
+             {A web application allowing people to make anonymous crime tips online.
+               \begin{itemize}
+                 \item Implemented as a SOAP-based web service and a multi-page web application using ASP.NET, \href{http://jquery.com/}{jQuery} and \href{http://lesscss.org/}{LESS}
+                 \item Acted as the technical lead
+                 \item Developed the overall design of the UI
+             \end{itemize}}
+
+    \end{section}
+
+    \begin{section}{Artifacts}
+
+      \vspace{5pt} % HACK: Eventually fix the spacing
+
+      \entry{H.A.R.D.A.C (2005)}
+            {Python \wrench}
+            {Command-line based, natural language AI Agent (similar to the famous \href{http://en.wikipedia.org/wiki/ELIZA}{ELIZA}) designed to evaluate “Art”. Developed concept, personality, and computer vision aspects. Implemented \href{http://en.wikipedia.org/wiki/Sobel_operator}{Sobel} image edge detection algorithm and other metrics to assign value to user-provided image.}
+
+      \entry{Transcend (2005)}
+            {Js, SVG \wrench}
+            {Web installation focused on translating physical gestures onto the Web. Developed mouse-gesture interface embedded directly into browser. Interpolated user-drawn paths into smooth Bezier curves and mapped these gestures as triggers for output messages.}
+
+    \end{section}
+
+    \begin{section}{Knowledge}
+
+      \workentry{Oct. 2002}
+                {Jun. 2008}
+                {BFA in Digital Arts and Experimental Media \href{http://www.dxarts.washington.edu/}{(DXARTS)}}
+                {University of Washington, Honors Program}
+                {Seattle, WA}
+
+    \end{section}
+
+  \end{body}
+\end{resume}
+\end{document}
