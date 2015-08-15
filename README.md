@@ -22,4 +22,4 @@ To get the same look, you'll need the following fonts installed on your system:
 You can obviously change the resunate.cls file to specify whichever fonts you want.
 
 ## Example
-![Sample Screenshot](https://raw.github.com/naasir/resunate/master/sample/sample.jpg)
+![Sample Screenshot](https://raw.github.com/naasir/resunate/master/sample.jpg)

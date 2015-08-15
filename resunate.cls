@@ -198,10 +198,6 @@
   #4 -- #5 \hfill \textcolor{highlightcolor}{#1 {\footnotesize \rightarrow} #2}\\[5pt]
   {#6}
   \vspace{5pt}
-  %% \ifthenelse{\isempty{#6}}
-             %% {}
-             %% {hello}
-  %% \ifthenelse{\isempty{#6}}{}{#6\vspace{5pt}}
 }
 
 %-----------------------------------------------------------
